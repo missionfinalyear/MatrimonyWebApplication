@@ -13,7 +13,6 @@ contract profile{
     string password;
     
     bool set;
-
   }
     
     address owner;

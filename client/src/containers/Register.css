@@ -1,0 +1,62 @@
+
+body{
+  	  	
+  	height: 100%;
+   text-align: center;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 89%;
+  	background-image: url("https://www.goalcast.com/wp-content/uploads/2017/07/Connected-couples.jpg")
+  } 
+@media screen and (min-width: 480px) {
+  .Login {
+
+    padding: 40px 40px;
+    width: 400px;
+    background: #ebdfe7;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 500px;
+    background: #ebdfe7;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  input{
+  	width: 30px;
+  	text-align: left;
+  }
+  div{
+  	text-align: left;
+  	align-self: center; 
+  }
+  .div1{
+    text-align: left;
+  }
+}
+
+.error
+{
+	color:red;
+}
+
+.label
+  {font-size: 30px;
+   font-weight: bold;
+   color: #729adb;
+   text-align: center;
+  }
+.content
+{
+  align-content: center;
+  position: center;
+  text-align: center;
+ 
+}
+span{ color: red; }

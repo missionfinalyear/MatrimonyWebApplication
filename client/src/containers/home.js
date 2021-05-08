@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link} from "react-router-dom";
+import { Link,Switch,BrowserRouter,Route} from "react-router-dom";
 import { GiClover } from "react-icons/gi";
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -13,23 +13,25 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {red} from '@material-ui/core/Colors';
-import {Card,CardContent,CardActions,CardHeader} from '@material-ui/core';
+
 import {Home,Person,Favorite,Chat,Grade,Face,Info} from '@material-ui/icons';
-import MailIcon from '@material-ui/icons/Mail';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
+
 import IconButton from '@material-ui/core/IconButton';
-import CardMedia from '@material-ui/core/CardMedia';
 import clsx from 'clsx';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Cardi from "./Card.js";
+import Chatss from "../containers/Chat.js";
+import ChatLogin from "../components/chatlist/chatLogin.js"
+import useLocalStorage from '../hooks/useLocalStorage.js';
+import {ContactsProvider} from "../components/contexts/ContactsProvider.js";
+import {ConversationProvider} from "../components/contexts/ConversationProvider.js";
+import { SocketProvider } from '../components/contexts/SocketProvider.js';
+
 
 const drawerWidth = 240;
 
@@ -112,10 +114,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+   
+
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [expanded, setExpanded] = React.useState(false);
+
+
+
+  
+  
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -129,7 +139,7 @@ export default function Dashboard() {
     setOpen(false);
   };
 
-  return (
+  return (    
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
@@ -153,7 +163,7 @@ export default function Dashboard() {
           </div>
           <div>
           <Typography variant="h6" noWrap>
-            Matrimony.com
+            Catch The Match.com
           </Typography>
           </div>
         </Toolbar>
@@ -186,24 +196,34 @@ export default function Dashboard() {
               <ListItemText primary="Browse Profile"/>
             </ListItem>
             </Link>
+            <Link to="/my_interests">
+            <ListItem button>
+              <ListItemIcon><Person/></ListItemIcon>
+              <ListItemText primary="Interested Profiles"/>
+            </ListItem>
+            </Link>
+            <Link to="/editprofile">
+            <ListItem button>
+              <ListItemIcon><Person/></ListItemIcon>
+              <ListItemText primary="Edit Profile"/>
+            </ListItem>
+            </Link>
+            <Link to ="/mychats">
             <ListItem button>
               <ListItemIcon><Chat/></ListItemIcon>
               <ListItemText primary="Chats"/>
             </ListItem>
+            </Link>
+            <Link to="/Upgrade-to-Premium">
             <ListItem button>
               <ListItemIcon><Grade/></ListItemIcon>
               <ListItemText primary="Premium"/>
-            </ListItem>
-            <Link to="/aboutpage">
-            <ListItem button>
-              <ListItemIcon><Info/></ListItemIcon>            
-              <ListItemText primary="About"/>            
             </ListItem>
             </Link>
         </List>
         <Divider/>
         <List>      
-        <Link to="/Register">
+        <Link to="/">
         	<ListItem button>        	 
               <ListItemIcon><Face/></ListItemIcon>            
               <ListItemText primary="Logout" />            
@@ -217,9 +237,6 @@ export default function Dashboard() {
         })}
       >
         <div className={classes.drawerHeader} />
-
-        
-
       </main>
     </div>
   );

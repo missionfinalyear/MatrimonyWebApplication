@@ -2,12 +2,18 @@
   "contractName": "chat",
   "abi": [
     {
-      "constant": true,
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
       "inputs": [
         {
-          "internalType": "int256",
-          "name": "ischat",
-          "type": "int256"
+          "internalType": "string",
+          "name": "_userid",
+          "type": "string"
         }
       ],
       "name": "chatlog",
@@ -18,37 +24,61 @@
           "type": "string"
         }
       ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getusers",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
       "payable": false,
       "stateMutability": "view",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"ischat\",\"type\":\"int256\"}],\"name\":\"chatlog\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol\":\"chat\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol\":{\"keccak256\":\"0x42303e5ea0c0d9e2f5a3e65eff4547d03c4986216865e9eedda2fd0972f2618e\",\"urls\":[\"bzz-raw://522cb1bcc09b5da9a8001964fd4da18ae1ee10efe2f6bde539a9855ea742a08c\",\"dweb:/ipfs/QmRPy9dfoyYqBoUCrRuihC2JaxThA5er2d5SSJALr2xQAR\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610192806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80630eda7bcb14610030575b600080fd5b61005c6004803603602081101561004657600080fd5b81019080803590602001909291905050506100d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009c578082015181840152602081019050610081565b50505050905090810190601f1680156100c95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6060600182141561011f576040518060400160405280600b81526020017f636861742073746f7265640000000000000000000000000000000000000000008152509050610158565b6040518060400160405280601381526020017f6368617420646f73656e742068617070656e640000000000000000000000000081525090505b91905056fea265627a7a72315820de8e7fb534cc7277eb18669e6b87ea8ede65827a516530193b9b2f430034153864736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80630eda7bcb14610030575b600080fd5b61005c6004803603602081101561004657600080fd5b81019080803590602001909291905050506100d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009c578082015181840152602081019050610081565b50505050905090810190601f1680156100c95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6060600182141561011f576040518060400160405280600b81526020017f636861742073746f7265640000000000000000000000000000000000000000008152509050610158565b6040518060400160405280601381526020017f6368617420646f73656e742068617070656e640000000000000000000000000081525090505b91905056fea265627a7a72315820de8e7fb534cc7277eb18669e6b87ea8ede65827a516530193b9b2f430034153864736f6c63430005100032",
-  "sourceMap": "64:255:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:255:0;;;;;;;",
-  "deployedSourceMap": "64:255:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;64:255:0;;;;;;;;;;;;;;;;;;;129:187;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;129:187:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;129:187:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;178:13;219:1;211:6;:9;207:106;;;231:21;;;;;;;;;;;;;;;;;;;;;207:106;277:29;;;;;;;;;;;;;;;;;;;129:187;;;;:::o",
-  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma solidity 0.5.16;\r\n\r\ncontract chat{\r\n   //bool ischat= true;\r\n   int ischat;\r\n   \r\n   function chatlog(int ischat) public view returns(string memory){\r\n       \r\n   if (ischat==1){\r\n       return(\"chat stored\");\r\n   }\r\n   else{\r\n      return(\"chat dosent happend\");\r\n   }\r\n}\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_userid\",\"type\":\"string\"}],\"name\":\"chatlog\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getusers\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol\":\"chat\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol\":{\"keccak256\":\"0x691dadf024658d0048c9056ecde353bcc88ab164d501856acbcd0313fc7c0c60\",\"urls\":[\"bzz-raw://bdad6b65b4079a65b3ef2833477f5b2a3e057597a400505c1ef025a12e44dcfa\",\"dweb:/ipfs/QmZCdupqY9MVHW7daPwx7uRSniKLwvBo3kJc7BKeJEbG4t\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610620806100606000396000f3fe6080604052600436106100295760003560e01c8063075c31501461002e57806314edccc21461005e575b600080fd5b610048600480360361004391908101906102ed565b610089565b6040516100559190610493565b60405180910390f35b34801561006a57600080fd5b5061007361010b565b6040516100809190610471565b60405180910390f35b6060600060018360405161009d919061045a565b90815260200160405180910390209050828160000190805190602001906100c59291906101f4565b5060028390806001815401808255809150509060018203906000526020600020016000909192909190915090805190602001906101039291906101f4565b505050919050565b60606002805480602002602001604051908101604052809291908181526020016000905b828210156101eb578382906000526020600020018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101d75780601f106101ac576101008083540402835291602001916101d7565b820191906000526020600020905b8154815290600101906020018083116101ba57829003601f168201915b50505050508152602001906001019061012f565b50505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061023557805160ff1916838001178555610263565b82800160010185558215610263579182015b82811115610262578251825591602001919060010190610247565b5b5090506102709190610274565b5090565b61029691905b8082111561029257600081600090555060010161027a565b5090565b90565b600082601f8301126102aa57600080fd5b81356102bd6102b8826104e2565b6104b5565b915080825260208301602083018583830111156102d957600080fd5b6102e483828461058a565b50505092915050565b6000602082840312156102ff57600080fd5b600082013567ffffffffffffffff81111561031957600080fd5b61032584828501610299565b91505092915050565b600061033a8383610421565b905092915050565b600061034d8261051e565b610357818561054c565b9350836020820285016103698561050e565b8060005b858110156103a55784840389528151610386858261032e565b94506103918361053f565b925060208a0199505060018101905061036d565b50829750879550505050505092915050565b60006103c282610534565b6103cc818561056e565b93506103dc818560208601610599565b6103e5816105cc565b840191505092915050565b60006103fb82610534565b610405818561057f565b9350610415818560208601610599565b80840191505092915050565b600061042c82610529565b610436818561055d565b9350610446818560208601610599565b61044f816105cc565b840191505092915050565b600061046682846103f0565b915081905092915050565b6000602082019050818103600083015261048b8184610342565b905092915050565b600060208201905081810360008301526104ad81846103b7565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156104d857600080fd5b8060405250919050565b600067ffffffffffffffff8211156104f957600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b600082825260208201905092915050565b600081905092915050565b82818337600083830152505050565b60005b838110156105b757808201518184015260208101905061059c565b838111156105c6576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a7231582083732306b169e78e4cdb32e62a6c63a933f4d41c84af910547ee8f13649c4c0c6c6578706572696d656e74616cf564736f6c63430005100040",
+  "deployedBytecode": "0x6080604052600436106100295760003560e01c8063075c31501461002e57806314edccc21461005e575b600080fd5b610048600480360361004391908101906102ed565b610089565b6040516100559190610493565b60405180910390f35b34801561006a57600080fd5b5061007361010b565b6040516100809190610471565b60405180910390f35b6060600060018360405161009d919061045a565b90815260200160405180910390209050828160000190805190602001906100c59291906101f4565b5060028390806001815401808255809150509060018203906000526020600020016000909192909190915090805190602001906101039291906101f4565b505050919050565b60606002805480602002602001604051908101604052809291908181526020016000905b828210156101eb578382906000526020600020018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156101d75780601f106101ac576101008083540402835291602001916101d7565b820191906000526020600020905b8154815290600101906020018083116101ba57829003601f168201915b50505050508152602001906001019061012f565b50505050905090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061023557805160ff1916838001178555610263565b82800160010185558215610263579182015b82811115610262578251825591602001919060010190610247565b5b5090506102709190610274565b5090565b61029691905b8082111561029257600081600090555060010161027a565b5090565b90565b600082601f8301126102aa57600080fd5b81356102bd6102b8826104e2565b6104b5565b915080825260208301602083018583830111156102d957600080fd5b6102e483828461058a565b50505092915050565b6000602082840312156102ff57600080fd5b600082013567ffffffffffffffff81111561031957600080fd5b61032584828501610299565b91505092915050565b600061033a8383610421565b905092915050565b600061034d8261051e565b610357818561054c565b9350836020820285016103698561050e565b8060005b858110156103a55784840389528151610386858261032e565b94506103918361053f565b925060208a0199505060018101905061036d565b50829750879550505050505092915050565b60006103c282610534565b6103cc818561056e565b93506103dc818560208601610599565b6103e5816105cc565b840191505092915050565b60006103fb82610534565b610405818561057f565b9350610415818560208601610599565b80840191505092915050565b600061042c82610529565b610436818561055d565b9350610446818560208601610599565b61044f816105cc565b840191505092915050565b600061046682846103f0565b915081905092915050565b6000602082019050818103600083015261048b8184610342565b905092915050565b600060208201905081810360008301526104ad81846103b7565b905092915050565b6000604051905081810181811067ffffffffffffffff821117156104d857600080fd5b8060405250919050565b600067ffffffffffffffff8211156104f957600080fd5b601f19601f8301169050602081019050919050565b6000819050602082019050919050565b600081519050919050565b600081519050919050565b600081519050919050565b6000602082019050919050565b600082825260208201905092915050565b600082825260208201905092915050565b600082825260208201905092915050565b600081905092915050565b82818337600083830152505050565b60005b838110156105b757808201518184015260208101905061059c565b838111156105c6576000848401525b50505050565b6000601f19601f830116905091905056fea365627a7a7231582083732306b169e78e4cdb32e62a6c63a933f4d41c84af910547ee8f13649c4c0c6c6578706572696d656e74616cf564736f6c63430005100040",
+  "sourceMap": "99:654:0:-;;;247:63;8:9:-1;5:2;;;30:1;27;20:12;5:2;247:63:0;282:10;276:5;;:16;;;;;;;;;;;;;;;;;;99:654;;;;;;",
+  "deployedSourceMap": "99:654:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;416:247;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;667:83;;8:9:-1;5:2;;;30:1;27;20:12;5:2;667:83:0;;;:::i;:::-;;;;;;;;;;;;;;;;416:247;479:13;523:24;550:11;563:7;550:21;;;;;;;;;;;;;;;;;;;;523:48;;597:7;582:4;:13;;:22;;;;;;;;;;;;:::i;:::-;;615:8;629:7;615:22;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;615:22:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;416:247;;;;:::o;667:83::-;707:16;738:8;731:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;667:83;:::o;99:654::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6:442:-1:-;;108:3;101:4;93:6;89:17;85:27;75:2;;126:1;123;116:12;75:2;163:6;150:20;185:65;200:49;242:6;200:49;;;185:65;;;176:74;;270:6;263:5;256:21;306:4;298:6;294:17;339:4;332:5;328:16;374:3;365:6;360:3;356:16;353:25;350:2;;;391:1;388;381:12;350:2;401:41;435:6;430:3;425;401:41;;;68:380;;;;;;;;456:347;;570:2;558:9;549:7;545:23;541:32;538:2;;;586:1;583;576:12;538:2;649:1;638:9;634:17;621:31;672:18;664:6;661:30;658:2;;;704:1;701;694:12;658:2;724:63;779:7;770:6;759:9;755:22;724:63;;;714:73;;600:193;532:271;;;;;811:181;;924:62;982:3;974:6;924:62;;;910:76;;903:89;;;;;1029:896;;1186:60;1240:5;1186:60;;;1259:92;1344:6;1339:3;1259:92;;;1252:99;;1374:3;1416:4;1408:6;1404:17;1399:3;1395:27;1443:62;1499:5;1443:62;;;1525:7;1553:1;1538:348;1563:6;1560:1;1557:13;1538:348;;;1625:9;1619:4;1615:20;1610:3;1603:33;1670:6;1664:13;1692:76;1763:4;1748:13;1692:76;;;1684:84;;1785:66;1844:6;1785:66;;;1775:76;;1874:4;1869:3;1865:14;1858:21;;1595:291;1585:1;1582;1578:9;1573:14;;1538:348;;;1542:14;1899:4;1892:11;;1916:3;1909:10;;1165:760;;;;;;;;;;1933:347;;2045:39;2078:5;2045:39;;;2096:71;2160:6;2155:3;2096:71;;;2089:78;;2172:52;2217:6;2212:3;2205:4;2198:5;2194:16;2172:52;;;2245:29;2267:6;2245:29;;;2240:3;2236:39;2229:46;;2025:255;;;;;;2287:360;;2417:39;2450:5;2417:39;;;2468:89;2550:6;2545:3;2468:89;;;2461:96;;2562:52;2607:6;2602:3;2595:4;2588:5;2584:16;2562:52;;;2635:6;2630:3;2626:16;2619:23;;2397:250;;;;;;2654:319;;2752:35;2781:5;2752:35;;;2799:61;2853:6;2848:3;2799:61;;;2792:68;;2865:52;2910:6;2905:3;2898:4;2891:5;2887:16;2865:52;;;2938:29;2960:6;2938:29;;;2933:3;2929:39;2922:46;;2732:241;;;;;;2980:266;;3126:95;3217:3;3208:6;3126:95;;;3119:102;;3238:3;3231:10;;3107:139;;;;;3253:385;;3433:2;3422:9;3418:18;3410:26;;3483:9;3477:4;3473:20;3469:1;3458:9;3454:17;3447:47;3508:120;3623:4;3614:6;3508:120;;;3500:128;;3404:234;;;;;3645:301;;3783:2;3772:9;3768:18;3760:26;;3833:9;3827:4;3823:20;3819:1;3808:9;3804:17;3797:47;3858:78;3931:4;3922:6;3858:78;;;3850:86;;3754:192;;;;;3953:256;;4015:2;4009:9;3999:19;;4053:4;4045:6;4041:17;4152:6;4140:10;4137:22;4116:18;4104:10;4101:34;4098:62;4095:2;;;4173:1;4170;4163:12;4095:2;4193:10;4189:2;4182:22;3993:216;;;;;4216:322;;4360:18;4352:6;4349:30;4346:2;;;4392:1;4389;4382:12;4346:2;4459:4;4455:9;4448:4;4440:6;4436:17;4432:33;4424:41;;4523:4;4517;4513:15;4505:23;;4283:255;;;;4545:157;;4637:3;4629:11;;4675:4;4670:3;4666:14;4658:22;;4623:79;;;;4709:143;;4824:5;4818:12;4808:22;;4789:63;;;;4859:118;;4949:5;4943:12;4933:22;;4914:63;;;;4984:122;;5078:5;5072:12;5062:22;;5043:63;;;;5113:114;;5217:4;5212:3;5208:14;5200:22;;5194:33;;;;5235:184;;5371:6;5366:3;5359:19;5408:4;5403:3;5399:14;5384:29;;5352:67;;;;;5428:153;;5533:6;5528:3;5521:19;5570:4;5565:3;5561:14;5546:29;;5514:67;;;;;5590:163;;5705:6;5700:3;5693:19;5742:4;5737:3;5733:14;5718:29;;5686:67;;;;;5762:145;;5898:3;5883:18;;5876:31;;;;;5916:145;5997:6;5992:3;5987;5974:30;6053:1;6044:6;6039:3;6035:16;6028:27;5967:94;;;;6070:268;6135:1;6142:101;6156:6;6153:1;6150:13;6142:101;;;6232:1;6227:3;6223:11;6217:18;6213:1;6208:3;6204:11;6197:39;6178:2;6175:1;6171:10;6166:15;;6142:101;;;6258:6;6255:1;6252:13;6249:2;;;6323:1;6314:6;6309:3;6305:16;6298:27;6249:2;6119:219;;;;;6346:97;;6434:2;6430:7;6425:2;6418:5;6414:14;6410:28;6400:38;;6394:49;;;",
+  "source": "// SPDX-License-Identifier: GPL-3.0\r\npragma experimental ABIEncoderV2;\r\npragma solidity 0.5.16;\r\n\r\ncontract chat{\r\n   \r\n\r\n   address owner;\r\n\r\n     mapping(string => chatmapping)  userchatlog;\r\n     \r\n     string [] private userchat;\r\n     \r\n     constructor () public {\r\n    owner=msg.sender;\r\n        \r\n    }\r\n   \r\n    struct chatmapping{\r\n       \r\n        string username;\r\n       \r\n        \r\n       \r\n}\r\n   \r\n   function chatlog(string memory _userid) public payable returns(string memory){\r\n       \r\n        \r\n        chatmapping storage user = userchatlog [_userid];\r\n        user.username= _userid;\r\n        userchat.push(_userid);\r\n        \r\n    \r\n    \r\n}\r\n\r\nfunction getusers() public view returns(string [] memory){\r\n    return userchat;\r\n}\r\n}",
   "sourcePath": "C:/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol",
   "ast": {
     "absolutePath": "/C/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol",
     "exportedSymbols": {
       "chat": [
-        24
+        59
       ]
     },
-    "id": 25,
+    "id": 60,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:33:0"
+      },
+      {
+        "id": 2,
         "literals": [
           "solidity",
           "0.5",
           ".16"
         ],
         "nodeType": "PragmaDirective",
-        "src": "37:23:0"
+        "src": "72:23:0"
       },
       {
         "baseContracts": [],
@@ -56,249 +86,491 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 24,
+        "id": 59,
         "linearizedBaseContracts": [
-          24
+          59
         ],
         "name": "chat",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 3,
-            "name": "ischat",
+            "id": 4,
+            "name": "owner",
             "nodeType": "VariableDeclaration",
-            "scope": 24,
-            "src": "108:10:0",
+            "scope": 59,
+            "src": "125:13:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_int256",
-              "typeString": "int256"
+              "typeIdentifier": "t_address",
+              "typeString": "address"
             },
             "typeName": {
-              "id": 2,
-              "name": "int",
+              "id": 3,
+              "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "108:3:0",
+              "src": "125:7:0",
+              "stateMutability": "nonpayable",
               "typeDescriptions": {
-                "typeIdentifier": "t_int256",
-                "typeString": "int256"
+                "typeIdentifier": "t_address",
+                "typeString": "address"
               }
             },
             "value": null,
             "visibility": "internal"
           },
           {
+            "constant": false,
+            "id": 8,
+            "name": "userchatlog",
+            "nodeType": "VariableDeclaration",
+            "scope": 59,
+            "src": "148:43:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_chatmapping_$23_storage_$",
+              "typeString": "mapping(string => struct chat.chatmapping)"
+            },
+            "typeName": {
+              "id": 7,
+              "keyType": {
+                "id": 5,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "156:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "148:30:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_chatmapping_$23_storage_$",
+                "typeString": "mapping(string => struct chat.chatmapping)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 6,
+                "name": "chatmapping",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 23,
+                "src": "166:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                  "typeString": "struct chat.chatmapping"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 11,
+            "name": "userchat",
+            "nodeType": "VariableDeclaration",
+            "scope": 59,
+            "src": "206:26:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+              "typeString": "string[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 9,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "206:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "id": 10,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "206:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                "typeString": "string[]"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
             "body": {
-              "id": 22,
+              "id": 19,
               "nodeType": "Block",
-              "src": "192:124:0",
+              "src": "269:41:0",
               "statements": [
                 {
-                  "condition": {
+                  "expression": {
                     "argumentTypes": null,
-                    "commonType": {
-                      "typeIdentifier": "t_int256",
-                      "typeString": "int256"
-                    },
-                    "id": 12,
+                    "id": 17,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
-                    "leftExpression": {
+                    "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 10,
-                      "name": "ischat",
+                      "id": 14,
+                      "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5,
-                      "src": "211:6:0",
+                      "referencedDeclaration": 4,
+                      "src": "276:5:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_int256",
-                        "typeString": "int256"
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
                       }
                     },
-                    "nodeType": "BinaryOperation",
-                    "operator": "==",
-                    "rightExpression": {
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31",
-                      "id": 11,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 433,
+                        "src": "282:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 16,
                       "isConstant": false,
                       "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
+                      "isPure": false,
                       "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "219:1:0",
-                      "subdenomination": null,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "282:10:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1_by_1",
-                        "typeString": "int_const 1"
-                      },
-                      "value": "1"
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
                     },
-                    "src": "211:9:0",
+                    "src": "276:16:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
                     }
                   },
-                  "falseBody": {
-                    "id": 20,
-                    "nodeType": "Block",
-                    "src": "268:45:0",
-                    "statements": [
-                      {
-                        "expression": {
-                          "argumentTypes": null,
-                          "components": [
-                            {
-                              "argumentTypes": null,
-                              "hexValue": "6368617420646f73656e742068617070656e64",
-                              "id": 17,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "kind": "string",
-                              "lValueRequested": false,
-                              "nodeType": "Literal",
-                              "src": "284:21:0",
-                              "subdenomination": null,
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_stringliteral_45ba3bd6c09e94b88d1b231921ab9640727f89b2d34c62e7de72f61efc949e8c",
-                                "typeString": "literal_string \"chat dosent happend\""
-                              },
-                              "value": "chat dosent happend"
-                            }
-                          ],
-                          "id": 18,
-                          "isConstant": false,
-                          "isInlineArray": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "lValueRequested": false,
-                          "nodeType": "TupleExpression",
-                          "src": "283:23:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_stringliteral_45ba3bd6c09e94b88d1b231921ab9640727f89b2d34c62e7de72f61efc949e8c",
-                            "typeString": "literal_string \"chat dosent happend\""
-                          }
-                        },
-                        "functionReturnParameters": 9,
-                        "id": 19,
-                        "nodeType": "Return",
-                        "src": "277:29:0"
-                      }
-                    ]
-                  },
-                  "id": 21,
-                  "nodeType": "IfStatement",
-                  "src": "207:106:0",
-                  "trueBody": {
-                    "id": 16,
-                    "nodeType": "Block",
-                    "src": "221:38:0",
-                    "statements": [
-                      {
-                        "expression": {
-                          "argumentTypes": null,
-                          "components": [
-                            {
-                              "argumentTypes": null,
-                              "hexValue": "636861742073746f726564",
-                              "id": 13,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "kind": "string",
-                              "lValueRequested": false,
-                              "nodeType": "Literal",
-                              "src": "238:13:0",
-                              "subdenomination": null,
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_stringliteral_f5bedb2378c5756d581ab082d477a7fe27ddc40a0ca3fa459e08b24f95cc77c4",
-                                "typeString": "literal_string \"chat stored\""
-                              },
-                              "value": "chat stored"
-                            }
-                          ],
-                          "id": 14,
-                          "isConstant": false,
-                          "isInlineArray": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "lValueRequested": false,
-                          "nodeType": "TupleExpression",
-                          "src": "237:15:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_stringliteral_f5bedb2378c5756d581ab082d477a7fe27ddc40a0ca3fa459e08b24f95cc77c4",
-                            "typeString": "literal_string \"chat stored\""
-                          }
-                        },
-                        "functionReturnParameters": 9,
-                        "id": 15,
-                        "nodeType": "Return",
-                        "src": "231:21:0"
-                      }
-                    ]
-                  }
+                  "id": 18,
+                  "nodeType": "ExpressionStatement",
+                  "src": "276:16:0"
                 }
               ]
             },
             "documentation": null,
+            "id": 20,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "259:2:0"
+            },
+            "returnParameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "269:0:0"
+            },
+            "scope": 59,
+            "src": "247:63:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "chat.chatmapping",
             "id": 23,
+            "members": [
+              {
+                "constant": false,
+                "id": 22,
+                "name": "username",
+                "nodeType": "VariableDeclaration",
+                "scope": 23,
+                "src": "359:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 21,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "359:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "chatmapping",
+            "nodeType": "StructDefinition",
+            "scope": 59,
+            "src": "321:85:0",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 48,
+              "nodeType": "Block",
+              "src": "493:170:0",
+              "statements": [
+                {
+                  "assignments": [
+                    31
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 31,
+                      "name": "user",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 48,
+                      "src": "523:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                        "typeString": "struct chat.chatmapping"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 30,
+                        "name": "chatmapping",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 23,
+                        "src": "523:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                          "typeString": "struct chat.chatmapping"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 35,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 32,
+                      "name": "userchatlog",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "550:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_chatmapping_$23_storage_$",
+                        "typeString": "mapping(string memory => struct chat.chatmapping storage ref)"
+                      }
+                    },
+                    "id": 34,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 33,
+                      "name": "_userid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "563:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "550:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_chatmapping_$23_storage",
+                      "typeString": "struct chat.chatmapping storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "523:48:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 40,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 36,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 31,
+                        "src": "582:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                          "typeString": "struct chat.chatmapping storage pointer"
+                        }
+                      },
+                      "id": 38,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "username",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 22,
+                      "src": "582:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 39,
+                      "name": "_userid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "597:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "582:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 41,
+                  "nodeType": "ExpressionStatement",
+                  "src": "582:22:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 45,
+                        "name": "_userid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 25,
+                        "src": "629:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 42,
+                        "name": "userchat",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11,
+                        "src": "615:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 44,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "615:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 46,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "615:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 47,
+                  "nodeType": "ExpressionStatement",
+                  "src": "615:22:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 49,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "chatlog",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 6,
+              "id": 26,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5,
-                  "name": "ischat",
+                  "id": 25,
+                  "name": "_userid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23,
-                  "src": "146:10:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_int256",
-                    "typeString": "int256"
-                  },
-                  "typeName": {
-                    "id": 4,
-                    "name": "int",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "146:3:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_int256",
-                      "typeString": "int256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "145:12:0"
-            },
-            "returnParameters": {
-              "id": 9,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 8,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 23,
-                  "src": "178:13:0",
+                  "scope": 49,
+                  "src": "433:21:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -306,10 +578,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7,
+                    "id": 24,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "178:6:0",
+                    "src": "433:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -319,40 +591,171 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "177:15:0"
+              "src": "432:23:0"
             },
-            "scope": 24,
-            "src": "129:187:0",
+            "returnParameters": {
+              "id": 29,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 49,
+                  "src": "479:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "479:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:15:0"
+            },
+            "scope": 59,
+            "src": "416:247:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 57,
+              "nodeType": "Block",
+              "src": "724:26:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 55,
+                    "name": "userchat",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11,
+                    "src": "738:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 54,
+                  "id": 56,
+                  "nodeType": "Return",
+                  "src": "731:15:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 58,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getusers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "684:2:0"
+            },
+            "returnParameters": {
+              "id": 54,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "707:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 51,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "707:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 52,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "707:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "706:18:0"
+            },
+            "scope": 59,
+            "src": "667:83:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 25,
-        "src": "64:255:0"
+        "scope": 60,
+        "src": "99:654:0"
       }
     ],
-    "src": "37:282:0"
+    "src": "37:716:0"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/Rachana Parkar/Desktop/dating/eth/contracts/Chat.sol",
     "exportedSymbols": {
       "chat": [
-        24
+        59
       ]
     },
-    "id": 25,
+    "id": 60,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "37:33:0"
+      },
+      {
+        "id": 2,
         "literals": [
           "solidity",
           "0.5",
           ".16"
         ],
         "nodeType": "PragmaDirective",
-        "src": "37:23:0"
+        "src": "72:23:0"
       },
       {
         "baseContracts": [],
@@ -360,249 +763,491 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 24,
+        "id": 59,
         "linearizedBaseContracts": [
-          24
+          59
         ],
         "name": "chat",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 3,
-            "name": "ischat",
+            "id": 4,
+            "name": "owner",
             "nodeType": "VariableDeclaration",
-            "scope": 24,
-            "src": "108:10:0",
+            "scope": 59,
+            "src": "125:13:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_int256",
-              "typeString": "int256"
+              "typeIdentifier": "t_address",
+              "typeString": "address"
             },
             "typeName": {
-              "id": 2,
-              "name": "int",
+              "id": 3,
+              "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "108:3:0",
+              "src": "125:7:0",
+              "stateMutability": "nonpayable",
               "typeDescriptions": {
-                "typeIdentifier": "t_int256",
-                "typeString": "int256"
+                "typeIdentifier": "t_address",
+                "typeString": "address"
               }
             },
             "value": null,
             "visibility": "internal"
           },
           {
+            "constant": false,
+            "id": 8,
+            "name": "userchatlog",
+            "nodeType": "VariableDeclaration",
+            "scope": 59,
+            "src": "148:43:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_chatmapping_$23_storage_$",
+              "typeString": "mapping(string => struct chat.chatmapping)"
+            },
+            "typeName": {
+              "id": 7,
+              "keyType": {
+                "id": 5,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "156:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "148:30:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_chatmapping_$23_storage_$",
+                "typeString": "mapping(string => struct chat.chatmapping)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 6,
+                "name": "chatmapping",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 23,
+                "src": "166:11:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                  "typeString": "struct chat.chatmapping"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 11,
+            "name": "userchat",
+            "nodeType": "VariableDeclaration",
+            "scope": 59,
+            "src": "206:26:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+              "typeString": "string[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 9,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "206:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "id": 10,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "206:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                "typeString": "string[]"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
             "body": {
-              "id": 22,
+              "id": 19,
               "nodeType": "Block",
-              "src": "192:124:0",
+              "src": "269:41:0",
               "statements": [
                 {
-                  "condition": {
+                  "expression": {
                     "argumentTypes": null,
-                    "commonType": {
-                      "typeIdentifier": "t_int256",
-                      "typeString": "int256"
-                    },
-                    "id": 12,
+                    "id": 17,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
-                    "leftExpression": {
+                    "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 10,
-                      "name": "ischat",
+                      "id": 14,
+                      "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 5,
-                      "src": "211:6:0",
+                      "referencedDeclaration": 4,
+                      "src": "276:5:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_int256",
-                        "typeString": "int256"
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
                       }
                     },
-                    "nodeType": "BinaryOperation",
-                    "operator": "==",
-                    "rightExpression": {
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "31",
-                      "id": 11,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 433,
+                        "src": "282:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 16,
                       "isConstant": false,
                       "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
+                      "isPure": false,
                       "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "219:1:0",
-                      "subdenomination": null,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "282:10:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_1_by_1",
-                        "typeString": "int_const 1"
-                      },
-                      "value": "1"
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
                     },
-                    "src": "211:9:0",
+                    "src": "276:16:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
                     }
                   },
-                  "falseBody": {
-                    "id": 20,
-                    "nodeType": "Block",
-                    "src": "268:45:0",
-                    "statements": [
-                      {
-                        "expression": {
-                          "argumentTypes": null,
-                          "components": [
-                            {
-                              "argumentTypes": null,
-                              "hexValue": "6368617420646f73656e742068617070656e64",
-                              "id": 17,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "kind": "string",
-                              "lValueRequested": false,
-                              "nodeType": "Literal",
-                              "src": "284:21:0",
-                              "subdenomination": null,
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_stringliteral_45ba3bd6c09e94b88d1b231921ab9640727f89b2d34c62e7de72f61efc949e8c",
-                                "typeString": "literal_string \"chat dosent happend\""
-                              },
-                              "value": "chat dosent happend"
-                            }
-                          ],
-                          "id": 18,
-                          "isConstant": false,
-                          "isInlineArray": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "lValueRequested": false,
-                          "nodeType": "TupleExpression",
-                          "src": "283:23:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_stringliteral_45ba3bd6c09e94b88d1b231921ab9640727f89b2d34c62e7de72f61efc949e8c",
-                            "typeString": "literal_string \"chat dosent happend\""
-                          }
-                        },
-                        "functionReturnParameters": 9,
-                        "id": 19,
-                        "nodeType": "Return",
-                        "src": "277:29:0"
-                      }
-                    ]
-                  },
-                  "id": 21,
-                  "nodeType": "IfStatement",
-                  "src": "207:106:0",
-                  "trueBody": {
-                    "id": 16,
-                    "nodeType": "Block",
-                    "src": "221:38:0",
-                    "statements": [
-                      {
-                        "expression": {
-                          "argumentTypes": null,
-                          "components": [
-                            {
-                              "argumentTypes": null,
-                              "hexValue": "636861742073746f726564",
-                              "id": 13,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "kind": "string",
-                              "lValueRequested": false,
-                              "nodeType": "Literal",
-                              "src": "238:13:0",
-                              "subdenomination": null,
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_stringliteral_f5bedb2378c5756d581ab082d477a7fe27ddc40a0ca3fa459e08b24f95cc77c4",
-                                "typeString": "literal_string \"chat stored\""
-                              },
-                              "value": "chat stored"
-                            }
-                          ],
-                          "id": 14,
-                          "isConstant": false,
-                          "isInlineArray": false,
-                          "isLValue": false,
-                          "isPure": true,
-                          "lValueRequested": false,
-                          "nodeType": "TupleExpression",
-                          "src": "237:15:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_stringliteral_f5bedb2378c5756d581ab082d477a7fe27ddc40a0ca3fa459e08b24f95cc77c4",
-                            "typeString": "literal_string \"chat stored\""
-                          }
-                        },
-                        "functionReturnParameters": 9,
-                        "id": 15,
-                        "nodeType": "Return",
-                        "src": "231:21:0"
-                      }
-                    ]
-                  }
+                  "id": 18,
+                  "nodeType": "ExpressionStatement",
+                  "src": "276:16:0"
                 }
               ]
             },
             "documentation": null,
+            "id": 20,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "259:2:0"
+            },
+            "returnParameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "269:0:0"
+            },
+            "scope": 59,
+            "src": "247:63:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "chat.chatmapping",
             "id": 23,
+            "members": [
+              {
+                "constant": false,
+                "id": 22,
+                "name": "username",
+                "nodeType": "VariableDeclaration",
+                "scope": 23,
+                "src": "359:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 21,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "359:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "chatmapping",
+            "nodeType": "StructDefinition",
+            "scope": 59,
+            "src": "321:85:0",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 48,
+              "nodeType": "Block",
+              "src": "493:170:0",
+              "statements": [
+                {
+                  "assignments": [
+                    31
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 31,
+                      "name": "user",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 48,
+                      "src": "523:24:0",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                        "typeString": "struct chat.chatmapping"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 30,
+                        "name": "chatmapping",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 23,
+                        "src": "523:11:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                          "typeString": "struct chat.chatmapping"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 35,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 32,
+                      "name": "userchatlog",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "550:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_chatmapping_$23_storage_$",
+                        "typeString": "mapping(string memory => struct chat.chatmapping storage ref)"
+                      }
+                    },
+                    "id": 34,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 33,
+                      "name": "_userid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "563:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "550:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_chatmapping_$23_storage",
+                      "typeString": "struct chat.chatmapping storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "523:48:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 40,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 36,
+                        "name": "user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 31,
+                        "src": "582:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_chatmapping_$23_storage_ptr",
+                          "typeString": "struct chat.chatmapping storage pointer"
+                        }
+                      },
+                      "id": 38,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "username",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 22,
+                      "src": "582:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 39,
+                      "name": "_userid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 25,
+                      "src": "597:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "582:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 41,
+                  "nodeType": "ExpressionStatement",
+                  "src": "582:22:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 45,
+                        "name": "_userid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 25,
+                        "src": "629:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 42,
+                        "name": "userchat",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11,
+                        "src": "615:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 44,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "615:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 46,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "615:22:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 47,
+                  "nodeType": "ExpressionStatement",
+                  "src": "615:22:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 49,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "chatlog",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 6,
+              "id": 26,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 5,
-                  "name": "ischat",
+                  "id": 25,
+                  "name": "_userid",
                   "nodeType": "VariableDeclaration",
-                  "scope": 23,
-                  "src": "146:10:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_int256",
-                    "typeString": "int256"
-                  },
-                  "typeName": {
-                    "id": 4,
-                    "name": "int",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "146:3:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_int256",
-                      "typeString": "int256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "145:12:0"
-            },
-            "returnParameters": {
-              "id": 9,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 8,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 23,
-                  "src": "178:13:0",
+                  "scope": 49,
+                  "src": "433:21:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -610,10 +1255,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 7,
+                    "id": 24,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "178:6:0",
+                    "src": "433:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -623,28 +1268,158 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "177:15:0"
+              "src": "432:23:0"
             },
-            "scope": 24,
-            "src": "129:187:0",
+            "returnParameters": {
+              "id": 29,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 49,
+                  "src": "479:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "479:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:15:0"
+            },
+            "scope": 59,
+            "src": "416:247:0",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 57,
+              "nodeType": "Block",
+              "src": "724:26:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 55,
+                    "name": "userchat",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 11,
+                    "src": "738:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 54,
+                  "id": 56,
+                  "nodeType": "Return",
+                  "src": "731:15:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 58,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getusers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 50,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "684:2:0"
+            },
+            "returnParameters": {
+              "id": 54,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 53,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 58,
+                  "src": "707:16:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 51,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "707:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 52,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "707:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "706:18:0"
+            },
+            "scope": 59,
+            "src": "667:83:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 25,
-        "src": "64:255:0"
+        "scope": 60,
+        "src": "99:654:0"
       }
     ],
-    "src": "37:282:0"
+    "src": "37:716:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x4599cC461481aB673cc68E709E4Dc76764E779e0",
+      "transactionHash": "0xcb2cd9cb4f2fd47bb875d2e74ab94362aeaea69a55b577d5347c4fce955f6aac"
+    }
+  },
   "schemaVersion": "3.3.1",
-  "updatedAt": "2021-02-21T14:12:41.089Z",
+  "updatedAt": "2021-05-07T04:05:41.691Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

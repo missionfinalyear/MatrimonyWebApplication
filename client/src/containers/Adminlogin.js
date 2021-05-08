@@ -62,8 +62,7 @@ class Adminlogin extends Component{
         if (response.data==="sucessfull")
         {
         console.log(response.data);
-       // const r = window.confirm("We will take you to the dashboard, please wait!!");
-        //if (r===true){
+       
         console.log("okk");
         this.setState({
           redirect: true
@@ -103,10 +102,10 @@ class Adminlogin extends Component{
     const { formErrors } = this.state;
     console.log(this.state.redirect);
     if(this.state.redirect){
-      return <Redirect to="/dashboard" />
+      return <Redirect to="/admindashboard" />
     }else{
       return(
-      <div className="container h-100 d-flex justify-content-center">
+      <div className="container h-100 d-flex justify-content-center" style={{paddingTop:"50px"}}>
       <div className="Login">
   
     <FormLabel className="label"> Sign In</FormLabel>

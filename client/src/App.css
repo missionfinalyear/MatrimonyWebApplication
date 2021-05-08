@@ -41,6 +41,7 @@
 body {
   background-image: url("https://wallpapercave.com/wp/MuIV2JN.jpg");
   background-size: auto;
+  height: 100%
 }
 
 @keyframes App-logo-spin {
@@ -57,3 +58,63 @@ h1{
    font-size: 50px;
 }
 
+h5{
+   font-family: "Lucida Handwriting", cursive;
+   font-size: 30px;
+}
+h4{
+   font-family: "Lucida Handwriting", cursive;
+   font-size: 20px;
+}
+h3{
+   font-family: "Lucida Handwriting", cursive;
+   font-size: 30px;
+}
+h2{
+   font-family: "Lucida Handwriting", cursive;
+   font-size: 30px;
+}
+h6{
+   font-family: "Lucida Handwriting", cursive;
+   font-size: 30px;
+}
+p{
+   font-family: "Lucida Handwriting", cursive;
+   font-size: 22px;
+}
+
+
+
+.chat-container {
+  min-width: 900px;
+  max-width: 1000px;
+  max-height: 800px;
+  height: 80vh;
+  width: 100%;
+  background: #dce2e8;
+  border-radius: 10px; 
+  position: center;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6c84ff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3b5bfe;
+}

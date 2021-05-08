@@ -1,0 +1,43 @@
+.popup1 {  
+  position: fixed;  
+  width: 50%;  
+  height: 80%;  
+  top: 0%;  
+  left: 20%;  
+  right: 20%;  
+  bottom: 0%;  
+  margin: auto;  
+  background-color: rgb(252, 252, 17);  
+}  
+.popup\_inner1 {  
+  position: absolute;  
+  left: 25%;  
+  right: 25%;  
+  top: 25%;  
+  bottom: 25%;  
+  margin: auto;  
+  border-radius: 30px;  
+  background: rgb(252, 252, 17);  
+}
+
+.popup2 {  
+  position: fixed;  
+  width: 40%;  
+  height: 60%;  
+  top: 0%;  
+  left: 30%;  
+  right: 30%;  
+  bottom: 0%;  
+  margin: auto;  
+  background-color: rgb(252, 125, 6);  
+}  
+.popup\_inner2 {  
+  position: absolute;  
+  left: 25%;  
+  right: 25%;  
+  top: 25%;  
+  bottom: 25%;  
+  margin: auto;  
+  border-radius: 30px;  
+  background: rgb(252, 125, 6);  
+}

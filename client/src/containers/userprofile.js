@@ -1,13 +1,29 @@
 import React from 'react';
-
-//import '../App.css';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
+import '../App.css'; 
+import {Route,Switch,Link,BrowserRouter,Redirect } from "react-router-dom";
+import { Button} from "react-bootstrap";
+import Dashboard from "./home.js";
 
 class Profile extends React.Component 
 {
+  
+	constructor(props) {
+    super(props);
+    this.props = props;
+    this.state = {
+      loading: true,
+      info: {}
+    };
+    console.log(this.props);
+    
+  }
+
+
+
 	render(){
- 
+    console.log(this.props.location.state.info);    
 
 	return(
 		
@@ -38,26 +54,35 @@ class Profile extends React.Component
 		            </div>
 		        </div>
 		    </div>
-
-		 <div className="biodata" style={{justifyContent:"space-around",margin:"50px 300px", color:"white"}}>
-		 <h6> Date of Birth : 7th november 1999</h6>
-		 <h6> Gender: Female </h6>
-		 <h6> Religion : Hindu </h6>
-		 <h6> Languages known: Marathi, English, Hindi  </h6>
-		 <h6> Nationality: Indian </h6>
-		 <h6> Mariatal status: Unmarried </h6>
-		 <h6> Address: Saraswati sadan, Room no.1,New mill road, kurla west, Mumbai 400070  </h6>
-         <h6> Email ID: abc@gmail.com </h6>
-         <h6> Mobile: 123456785 </h6>
-         <h6> Physical Handicap: No </h6>
-
-		 </div>
+            
+            {(this.props.location.state.info).map(item =>{
+            	return(
+            	 <div style={{justifyContent:'center',paddingLeft: "310px"}} >
+            	 <ul>
+                 <li key="{item.dob}"><h5  > Date of Birth : {item.dob} </h5></li>
+                 <li key="{item.gender}"><h5  > Gender : {item.gender}</h5></li>
+                 <li key="{item.nationality}"><h5  > Nationality : {item.nationality}</h5></li>
+                 <li key="{item.religion}"><h5  > Relogion : {item.religion}</h5></li>
+                 <li key="{item.caste}"><h5  > Caste : {item.caste}</h5></li>
+                 <li key="{item.maritalstatus}"><h5  > Marital Status : {item.maritalstatus}</h5></li>
+                 <li key="{item.languagesknown}"><h5  > Languages known : {item.languagesknown}</h5></li>
+                 <li key="{item.address}"><h5  > Address : {item.address}</h5></li>
+                 <li key="{item.email}"><h5  > Email : {item.email}</h5></li>
+                 <li key="{item.mobile}"><h5  > Mobile : {item.mobile}</h5></li>
+                 </ul>
+                 </div>
+            		);
+            })}
+            
+		      <Link to={{pathname: "/dashboard", state:{info:this.props.location.state.info}}} >
+              <Button variant="Outlined" style={{ borderRadius: "12px", fontSize:"20px", fontWeight:"bold",paddingLeft: "1050px"}}>Back to Dashboard</Button>
+              </Link>
 		</div>
      
 		);
 }
 }
 export default Profile; 
-ReactDOM.render(<Profile/>, document.getElementById('root'));
+//ReactDOM.render(<Profile/>, document.getElementById('root'));
 
 

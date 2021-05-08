@@ -4,7 +4,7 @@ import { Button, FormGroup, FormControl, FormLabel} from "react-bootstrap";
 import "./Register.css";
 import Axios from "axios";
 import { Redirect,Link,Switch,Route,Router } from "react-router-dom";
-//import Dashboard from "./home.js";
+import Profile from "./userprofile.js";
 
 
 const formvalid = ({formErrors, ...rest}) => {
@@ -18,8 +18,13 @@ const formvalid = ({formErrors, ...rest}) => {
   return valid;
 }
 
+
+Axios.defaults.withCredentials = true;
+
 class Login extends Component{
   
+
+
   constructor(props){
     super(props);
 
@@ -27,6 +32,7 @@ class Login extends Component{
       userName: null,
       passwordName: null,
       redirect:false,
+      info:"",
       formErrors:{
             userName: "",
             passwordName: "",
@@ -35,17 +41,6 @@ class Login extends Component{
   }
   
 
-  //setRedirect =()=>{
-    //this.setState({
-      //redirect:true
-    //})
-  //}
-
-  //renderRedirect =()=>{
-    //      if(this.state.redirect){
-      //      return <Redirect to = '/dashboard'/>
-        //  }
-         //}
 
   formSubmit = event =>{
     event.preventDefault();
@@ -58,20 +53,22 @@ class Login extends Component{
         userName: this.state.userName,
         passwordName: this.state.passwordName,
       }).then((response) => {
-        
-        if (response.data==="sucessfull")
+        if (response.data.auth===true)
         {
         console.log(response.data);
+        localStorage.setItem("token", response.data.token)
+        localStorage.setItem("id",response.data.userid)
+        localStorage.setItem("ispremium",response.data.id[0].ispremium)
        // const r = window.confirm("We will take you to the dashboard, please wait!!");
         //if (r===true){
-        console.log("okk");
         this.setState({
-          redirect: true
+          redirect: true,
+          info: response.data.id
         })
         
         }
         else{
-          alert(JSON.stringify(response.data))
+          alert(JSON.stringify(response.data.status))
         }
       });
     }
@@ -102,11 +99,12 @@ class Login extends Component{
   render(){
     const { formErrors } = this.state;
     console.log(this.state.redirect);
+    console.log(this.state.info);
     if(this.state.redirect){
-      return <Redirect to="/dashboard" />
+     return <Redirect to={{pathname: "/dashboard"}} />
     }else{
       return(
-      <div className="container h-100 d-flex justify-content-center">
+      <div className="container h-100 d-flex justify-content-center" style={{paddingTop:"50px"}}>
       <div className="Login">
   
     <FormLabel className="label"> Sign In</FormLabel>
@@ -148,6 +146,11 @@ class Login extends Component{
         </Button>
         <br>
         </br>
+        <div>
+        <Link to="/reset_password">
+        <Button variant="Outlined">Reset Password</Button>
+        </Link>
+        </div>
         <div>
         <Link to="/signup">
         <Button variant="Outlined">Not Registered? Click Here.</Button>

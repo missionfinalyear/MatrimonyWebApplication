@@ -295,7 +295,7 @@ onCreateUser = async (event) => {
           Register
         </Button>
         <Link to="/signin">
-        <Button variant="Outlined">Already Resitered?</Button>
+        <Button variant="Outlined">Already Registered?</Button>
         </Link> 
       </form>
    </div>

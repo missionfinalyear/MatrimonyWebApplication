@@ -25,6 +25,8 @@ import ViewLikedProfile from "./containers/ViewLikedProfile.js";
 import AdminViewProfile from "./containers/AdminView.js";
 import AllDocumentsAdmin from "./containers/AllDocumentsAdmin.js";
 import PasswordReset from "./containers/PasswordReset.js";
+import PremiumInfo from './containers/PremiumInfo';
+
 
 const App=()=>{
 
@@ -51,6 +53,7 @@ const App=()=>{
     <Route exact path="/adminviewuser" component={AdminViewProfile}/>
     <Route exact path="/all_documents_list" component={AllDocumentsAdmin}/>
     <Route exact path="/reset_password" component={PasswordReset}/>
+    <Route exact path="/premiuminfo" component={PremiumInfo}/>
 
     </div>
     </Switch>

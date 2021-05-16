@@ -11,15 +11,18 @@ import Card from 'react-bootstrap/Card';
 export default class Premium extends React.Component {  
     constructor(props) {
     super(props);
-       this.state = {isPremium: localStorage.getItem("ispremium")};
+       this.state = {
+        isPremium: localStorage.getItem("ispremium")
+      };
   }
  
 
   render() {
     const isPremium = this.state.isPremium;
     let button;
-    if (isPremium) {
-      button = <PremiumMembership/>;
+    console.log(isPremium);
+    if (isPremium==1) {
+      button = <PremiumInfo/>;
     } else {
       button = <PremiumMembership/>;
     }

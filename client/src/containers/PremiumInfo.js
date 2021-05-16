@@ -3,7 +3,9 @@ import Switch from 'react-switch';
 import Grid from '@material-ui/core/Grid';
 import styled from "styled-components";
 import Typography from '@material-ui/core/Typography';
-import { Modal, Form } from 'react-bootstrap'
+import { Modal, Form } from 'react-bootstrap';
+import Axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 //import TextField from '@material-ui/core/TextField';
 
@@ -38,11 +40,13 @@ export default class PremiumInfo extends Component {
             checked2: false,
             checked3: false,
             textAreaValue: '',
+            redirect: false,
         };
         this.handleChange1 = this.handleChange1.bind(this)
         this.handleChange2 = this.handleChange2.bind(this)
         this.handleChange3 = this.handleChange3.bind(this)  
         this.handleChange = this.handleChange.bind(this)
+        this.onClickButton = this.onClickButton.bind(this)
     }
 
     handleChange1(checked1){
@@ -61,7 +65,33 @@ export default class PremiumInfo extends Component {
       this.setState({ textAreaValue: event.target.value });
     }
 
+   onClickButton = (e) => {
+    e.preventDefault();
+    const data = {
+      id : localStorage.getItem("id"),
+      contact : this.state.checked1,
+      address : this.state.checked2,
+      email : this.state.checked3,
+      queries : this.state.textAreaValue,
+    }
+     console.log("ok")
+
+    
+    Axios.post("http://localhost:3001/premiumoptions",data).then((response) => {
+      alert(response.data)
+    })
+
+
+   this.setState({redirect: true});
+
+   }
+
   render() {
+    console.log(this.state)
+    if(this.state.redirect){
+        return <Redirect to={{pathname: "/dashboard"}} />
+       }else{
+
     return (
       <React.Fragment>
      <Modal.Dialog>
@@ -119,13 +149,12 @@ export default class PremiumInfo extends Component {
         </div>
           </Form.Group>
           <div className="text-center">
-          <Button onClick={this.onClickButton} type="submit">Submit</Button>
+          <Button onClick= {this.onClickButton} type="submit">Submit</Button>
           </div>
-        </Form>
-
-        
+        </Form>      
       </Modal.Dialog>
     </React.Fragment>
   );
+}
   }
 }

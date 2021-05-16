@@ -153,7 +153,7 @@ export default function Dashboard() {
           </div>
           <div>
           <Typography variant="h6" noWrap>
-            Matrimony.com
+            Catch The Match.com
           </Typography>
           </div>
         </Toolbar>

@@ -472,7 +472,84 @@ app.post('/premium',(req,res) =>{
     }
   })
 });
-  
+
+app.post('/editbasicdetails',(req,res) =>{
+   const id = req.body.id;
+   const maritalstatus = req.body.maritalstatus.value;
+   const religion = req.body.religion.value;
+   const caste = req.body.caste.value;
+   const eatinghabits = req.body.eatinghabits.value;
+   const country = req.body.country.label;
+   const lang = req.body.lang;
+   var a = " ";
+   for (var i = lang.length - 1; i >= 0; i--){
+    a = a +' '+ lang[i]
+   
+   }
+   con.query("UPDATE userinfo set religion =?, maritalstatus=?, countryofresidence=?, eatinghabits=?, caste=?, languagesknown=? WHERE userid=? ",[religion,maritalstatus,country,eatinghabits,caste,a,id],async function(error,result){
+    if(error){
+      res.send("Failed to save!")
+      console.log(error)
+    }else{
+      res.send("Successfully Updated")
+    }
+   })
+
+})
+
+app.post('/otherdetails',(req,res) =>{
+   const id = req.body.id;
+   const WP = req.body.WorkingProfession;
+   const height = req.body.Height;
+   const weight = req.body.Weight;
+   const Address = req.body.Address;
+   const AdditionalInformation = req.body.AdditionalInformation;
+   con.query("UPDATE userinfo set profession =?, height=?, weight=?, address=?, additionalinfo=? WHERE userid=? ",[WP,height,weight,Address,AdditionalInformation,id],async function(error,result){
+    if(error){
+      res.send("Failed to save!")
+      console.log(error)
+    }else{
+      res.send("Successfully Updated")
+   }
+   })
+
+})
+
+app.post('/premiumoptions',(req,res) =>{
+  const id = req.body.id;
+  const contact = req.body.contact;
+  const address = req.body.address;
+  const email = req.body.email;
+  const queries = req.body.queries;
+  var cont;
+  var add;
+  var em;
+  var qu;
+  if (contact==true){
+    cont = "Yes";
+  }else{
+    cont = "No";
+  }
+  if (address==true){
+    add = "Yes";
+  }else{
+    add = "No";
+  }
+  if (email==true){
+    em = "Yes";
+  }else{
+    em = "No";
+  }
+
+  con.query("UPDATE userinfo set contactvisible=?, addressvisible=?, emailvisible=?, queries=? WHERE userid=?",[cont,add,em,queries,id],async function(error,result){
+    if(error){
+      res.send("Failed to save!")
+      console.log(error)
+    }else{
+      res.send("Successfully Updated")
+    }
+  })
+})  
 
 app.listen(3001, () =>{
 	console.log("running on port 3001");

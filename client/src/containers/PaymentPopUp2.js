@@ -71,6 +71,7 @@ export default class PaymentPopUp2 extends React.Component {
       from: accounts[0]
     });
     this.setState({isPremium: 1});
+    localStorage.setItem("ispremium",1)
     console.log(this.state.isPremium);
       Axios.post("http://localhost:3001/premium",{
       isPremium: this.state.isPremium,
@@ -87,7 +88,7 @@ export default class PaymentPopUp2 extends React.Component {
   }
 
   render() {
-    if(this.state.isPremium==1){
+    if(this.state.isPremium===1){
         return <Redirect to={{pathname: "/dashboard"}} />
        }else{
 

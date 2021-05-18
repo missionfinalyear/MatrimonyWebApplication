@@ -2,6 +2,7 @@ import React from 'react';
 import {  Table } from "semantic-ui-react";
 import { Link} from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import Card from 'react-bootstrap/Card';
 
 export default function AdminViewsUsers(props){
 
@@ -22,7 +23,12 @@ export default function AdminViewsUsers(props){
                  <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                </Link>
                </div>
-      <div style={{paddingLeft:"340px",fontSize:"20px", fontWeight:"bold" }}>
+               <div style={{paddingLeft:"350px",paddingTop:"100px"}}>
+        <Card style={{paddingLeft:"50px", width: "900px"}}>
+        <Card.Title className="text-center" >
+            </Card.Title>
+            <Card.Body  style={{width: "700px"}}>
+      
 		<Table singleLine>
         <Table.Header>
           <Table.Row>
@@ -50,6 +56,8 @@ export default function AdminViewsUsers(props){
           })}
         </Table.Body>
       </Table>
+      </Card.Body>
+      </Card>
       </div>
       </div>
     );

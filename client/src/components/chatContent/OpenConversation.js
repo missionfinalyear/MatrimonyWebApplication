@@ -80,7 +80,9 @@ const userchat = (username,mesg) => async(event) =>  {
   };
 
 	return(
+    <>
 		 <ReactShadowScroll>
+     <div className = "main__chatcontent">
 		<div className="d-flex flex-column flex-grow-1">
 		 <ReactShadowScroll>
       <div className="flex-grow-1 overflow-auto">
@@ -109,36 +111,36 @@ const userchat = (username,mesg) => async(event) =>  {
         </div>
       </div>
       	 </ReactShadowScroll>
+         </div>
       <div className="content__footer">
-          <div className="sendNewMessage">   
-            <input
-              type="text"
-              placeholder="Type a message here"
-              required
-              value={text}
-              onChange={e => setText(e.target.value)}
-              style={{ height: '40px', resize: 'none' }}
-            />
-            <button onClick={userchat(sender_name,mesg)} className="btnSendMsg" id="sendMsgBtn">
-               Send
-              <i className="fa fa-paper-plane"></i>
-            </button> 
+          <div className="sendNewMessage"> 
+                 {emojiPicker}
+                      <button
+                        class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+                        onClick={triggerPicker}
+                      >                       
+                                          <span role="img" aria-label="">
+                                            😁
+                                          </span>
+                      </button>   
+                      <input
+                        type="text"
+                        placeholder="Type a message here"
+                        required
+                        value={text}
+                        onChange={e => setText(e.target.value)}
+                        style={{ height: '40px', resize: 'none' }}
+                      />
+                      <button onClick={userchat(sender_name,mesg)} className="btnSendMsg" id="sendMsgBtn">   
+                      Send                    
+                        <i className="fa fa-paper-plane"></i>
+                      </button> 
            
-          </div>
-          <br></br>
-        {emojiPicker}
-          <button
-            class="ma4 b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-            onClick={triggerPicker}
-          >
-            Add an Emoji!
-            <span role="img" aria-label="">
-              😁
-            </span>
-          </button> 
+          </div>  
+      </div>
         </div>
-
-    </div>
+    
      </ReactShadowScroll>
-	);
+     </>
+  );
 }

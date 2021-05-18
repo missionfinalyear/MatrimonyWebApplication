@@ -2,6 +2,7 @@ import React from 'react';
 import {  Table } from "semantic-ui-react";
 import { Link} from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import Card from 'react-bootstrap/Card';
 
 export default function AdminViewDocuments(props){
 
@@ -26,7 +27,11 @@ export default function AdminViewDocuments(props){
                  <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                </Link>
                </div>
-      <div style={{paddingLeft:"440px",fontSize:"20px", fontWeight:"bold" }}>
+               <div style={{paddingLeft:"550px",paddingTop:"100px"}}>
+        <Card style={{paddingLeft:"50px", width: "500px"}}>
+        <Card.Title className="text-center" >
+            </Card.Title>
+            <Card.Body  style={{width: "400px"}}>
 		<Table singleLine>
         <Table.Header>
           <Table.Row>
@@ -48,6 +53,8 @@ export default function AdminViewDocuments(props){
           })}
         </Table.Body>
       </Table>
+     </Card.Body>
+      </Card>
       </div>
       </div>
     );

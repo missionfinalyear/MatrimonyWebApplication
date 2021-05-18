@@ -3,6 +3,7 @@ import Axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import Card from 'react-bootstrap/Card';
 
 var moment = require('moment');
 const url = "http://localhost:3001/upload/"
@@ -32,14 +33,19 @@ export default function LikedUserData(props){
       return(
                 myprofiles.map((me,index) => {
                   console.log(me);
-                    if (localStorage.getItem("ispremium")===1 & me.ispremium===1){
-                        if (me.contactvisible==="Yes" & me.addressvisible==="Yes" & me.emailvisible==="Yes"){
+                    if (localStorage.getItem("ispremium")==1 & me.ispremium==1){
+                        if (me.contactvisible=="Yes" & me.addressvisible=="Yes" & me.emailvisible=="Yes"){
 
                         return (
-                            <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                            <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                            <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                            <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
+                    
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -49,6 +55,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -72,17 +79,24 @@ export default function LikedUserData(props){
                      <li key="{me.address}"><p  > Address : {me.address}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                             )
                     }
-                    else if (me.contactvisible==="Yes" & me.addressvisible==="Yes" & me.emailvisible==="No"){
+                    else if (me.contactvisible=="Yes" & me.addressvisible=="Yes" & me.emailvisible=="No"){
                         return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                        <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -92,6 +106,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -114,18 +129,25 @@ export default function LikedUserData(props){
                      <li key="{me.address}"><p  > Address : {me.address}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
                      </div>
+                     </Card>
                      </div>
-                    )
+                     </div>                    )
 
                     }
-                    else if (me.contactvisible==="Yes" & me.addressvisible==="No" & me.emailvisible==="Yes"){
+                    else if (me.contactvisible=="Yes" & me.addressvisible=="No" & me.emailvisible=="Yes"){
                         return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                        <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
+                    
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -135,6 +157,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                         <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -157,17 +180,25 @@ export default function LikedUserData(props){
                      <li key="{me.email}"><p  > Email : {me.email}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
                      </div>
+                     </Card>
                      </div>
+                     </div> 
                     )
 
-                    }else if (me.contactvisible==="No" & me.addressvisible==="Yes" & me.emailvisible==="Yes"){
+                    }else if (me.contactvisible=="No" & me.addressvisible=="Yes" & me.emailvisible=="Yes"){
                         return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                        <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -177,6 +208,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -199,18 +231,25 @@ export default function LikedUserData(props){
                      <li key="{me.email}"><p  > Email : {me.email}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
                      </div>
+                     </Card>
                      </div>
+                     </div> 
                     )
 
-                    }else if (me.contactvisible==="Yes" & me.addressvisible==="No" & me.emailvisible==="No"){
+                    }else if (me.contactvisible=="Yes" & me.addressvisible=="No" & me.emailvisible=="No"){
 
                         return (
-                            <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                        <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                            <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -220,6 +259,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -241,17 +281,25 @@ export default function LikedUserData(props){
                      <li key="{me.mobile}"><p  > Contact : {me.mobile}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
                      </div>
+                     </Card>
                      </div>
+                     </div> 
                             )
                     }else if (me.contactvisible==="No" & me.addressvisible==="No" & me.emailvisible==="Yes"){
 
                         return (
-                            <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                        <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                            <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                            <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
+                    
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -261,6 +309,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -284,17 +333,24 @@ export default function LikedUserData(props){
                      
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                             )
-                    }else if (me.contactvisible==="No" & me.addressvisible==="Yes" & me.emailvisible==="No"){
+                    }else if (me.contactvisible=="No" & me.addressvisible=="Yes" & me.emailvisible=="No"){
 
                         return (
-                            <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                        <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                            <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -304,6 +360,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -325,7 +382,10 @@ export default function LikedUserData(props){
                      <li key="{me.address}"><p  > Address : {me.address}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                             )
@@ -334,10 +394,14 @@ export default function LikedUserData(props){
 
                   
                   return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                  <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -347,6 +411,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -367,7 +432,10 @@ export default function LikedUserData(props){
                      <li key="{me.Residence}"><p  > Country of Residence : {me.countryofresidence}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
                      </ul>
+                      </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                     )
@@ -379,10 +447,14 @@ export default function LikedUserData(props){
 
                   
                   return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
-                    <Link to="/my_interests">
+                  <div style={{ padding:"10px 10px"}}>
+                            <Link to="/my_interests">
                     <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
                     </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+                         <Card.Title className="text-center" >
+                           </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -392,6 +464,7 @@ export default function LikedUserData(props){
                         {me.profession}
                         <br></br>
                         Chat ID : {me.chatid} 
+                        <Card.Body  style={{width: "700px"}}>
                         <div>
                         <Link to="/mychats">
                         <Button variant="outlined"> Start Coversation</Button>
@@ -411,8 +484,11 @@ export default function LikedUserData(props){
                      <li key="{me.languagesknown}"><p  > Languages known : {me.languagesknown}</p></li>
                      <li key="{me.Residence}"><p  > Country of Residence : {me.countryofresidence}</p></li>
                      <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
-                     </ul>
+                    </ul>
+                      </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                     )

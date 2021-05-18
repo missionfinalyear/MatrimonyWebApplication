@@ -1,12 +1,15 @@
 .main__chatcontent {
   flex-grow: 1;
   padding: 20px 40px;
-  max-width: 63%;
+  max-width: 100%;
   border-right: 1px solid #ebe7fb;
+  height: 800px;
+   max-height: 500px;
 }
 .content__header {
   padding-bottom: 15px;
   border-bottom: 1px solid #ebe7fb;
+  position: fixed;
 }
 .current-chatting-user {
   display: flex;

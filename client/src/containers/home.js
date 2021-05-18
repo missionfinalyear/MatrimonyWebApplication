@@ -123,10 +123,6 @@ export default function Dashboard() {
 
 
 
-  
-  
-
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -236,6 +232,7 @@ export default function Dashboard() {
           [classes.contentShift]: open,
         })}
       >
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div className={classes.drawerHeader} />
       </main>
     </div>

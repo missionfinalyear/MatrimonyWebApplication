@@ -3,6 +3,7 @@ import Axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
 import { Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import Card from 'react-bootstrap/Card';
 
 var moment = require('moment');
 const url = "http://localhost:3001/upload/"
@@ -38,13 +39,17 @@ export default function MyData(props){
                 myprofiles.map((me,index) => {
                 	console.log(me);
                 	const {data} = me.dp;
-                	if (localStorage.getItem("ispremium")===1){
-
+                	if (localStorage.getItem("ispremium")==1){
                 		return(
-                		<div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
+                		<div style={{ padding:"10px 10px"}}>
                 		<Link to="/dashboard">
     						 <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
      					 </Link>
+                		<div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                		<Card style={{paddingLeft:"50px", width: "900px"}}>
+     					 <Card.Title className="text-center" >
+     					   </Card.Title>
+                
                 		<div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                 		
                 		<img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -54,6 +59,7 @@ export default function MyData(props){
                         {me.profession}
                         <br></br>
                         Chat ID: {me.chatid}
+                        <Card.Body  style={{width: "700px"}}>
                         <hr style={{height:"30px",color:"red"}}/>
 		                 <ul>
 		                 <li key="{me.dob}"><p  > Date of Birth : {moment(me.dob).format('DD MMM, YYYY') } </p></li>
@@ -75,18 +81,27 @@ export default function MyData(props){
 		                 <li key="{me.add}"><p  > Address visible to profiles : {me.addressvisible}</p></li>
 		                 <li key="{me.em}"><p  > Email visible to profiles : {me.emailvisible}</p></li>
 		                 </ul>
+		                 </Card.Body>
 		                 </p>    
 		                 </div>
+		                 </Card>
+     					 </div>
+                    
      					 </div>
                        
                 		)
 
                 	}else{
                 	return(
-                		<div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
+                		<div style={{ padding:"10px 10px"}}>
                 		<Link to="/dashboard">
     						 <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
      					 </Link>
+                		<div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                		
+     					 <Card style={{paddingLeft:"50px", width: "900px"}}>
+     					 <Card.Title className="text-center" >
+     					   </Card.Title>
                 		<div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                 		
                 		<img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -96,6 +111,8 @@ export default function MyData(props){
                         {me.profession}
                         <br></br>
                         Chat ID: {me.chatid}
+                      
+                        <Card.Body  style={{width: "700px"}}>
                         <hr style={{height:"30px",color:"red"}}/>
 		                 <ul>
 		                 <li key="{me.dob}"><p  > Date of Birth : {moment(me.dob).format('DD MMM, YYYY') } </p></li>
@@ -113,12 +130,15 @@ export default function MyData(props){
 		                 <li key="{me.mobile}"><p  > Mobile : {me.mobile}</p></li>
 		                 <li key="{me.residence}"><p  > Country of Residence : {me.countryofresidence}</p></li>
 		                 <li key="{me.expectations}"><p  > Expectations : {me.additionalinfo}</p></li>
-		   
+		                 
 		                 </ul>
+		                 </Card.Body>
+   
 		                 </p>    
 		                 </div>
+		                  </Card>
      					 </div>
-                       
+                       </div>
                 		)
 		             }
                 })

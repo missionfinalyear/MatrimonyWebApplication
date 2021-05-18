@@ -31,7 +31,13 @@ return (
          <br/>  
        <br/>  
         <br/>  
-         <Card className="justify-content-center">
+        <div>
+         <Link to="/dashboard">
+          <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"30px"}} > Back </Button>
+          </Link>
+               <div className="container h-100 d-flex justify-content-center">
+         <Card style={{width: "500px"}}>
+        
     <Card.Title className="text-center" >
         Catch The Match Premium Plan
       </Card.Title>
@@ -39,7 +45,8 @@ return (
          {button}
       </Card.Body>
     </Card>
- 
+ </div>
+ </div>
  </>
 
 );  

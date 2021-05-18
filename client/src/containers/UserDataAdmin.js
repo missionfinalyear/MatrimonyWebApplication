@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import ButtonMailto from './sendmail.js';
+import Card from 'react-bootstrap/Card';
 
 var moment = require('moment');
 const url = "http://localhost:3001/upload/"
@@ -42,10 +43,14 @@ export default function UserDataAdmin(props){
                   var mail = "mailto:"+usermail
                   if(me.ispremium===1 & me.queries!= null){
                     return(
-                      <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
+                    <div style={{ padding:"30px 10px"}}>
                     <Link to="/admin_view_all_users">
-                    <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
-                    </Link>
+                   <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
+                   </Link>
+                      <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+               <Card.Title className="text-center" >
+                 </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -53,6 +58,7 @@ export default function UserDataAdmin(props){
                         <p style={{padding:"0px 550px 100px 10px"}}> {me.username},{me.age}
                         <br></br>
                         {me.profession}
+                        <Card.Body  style={{width: "400px"}}>
                         <hr style={{height:"30px",color:"red"}}/>  
                      <ul>
                      <li key="{me.dob}"><p  > Date of Birth : {moment(me.dob).format('DD MMM, YYYY') }</p></li>
@@ -64,17 +70,24 @@ export default function UserDataAdmin(props){
                      <ButtonMailto label="Click here to answer the query!" mailto={mail} />
                      </p></li>
                      </ul>
+                     </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                       )
                   }else if (me.ispremium===1 & me.queries==null){
 
                     return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
+                    <div style={{ padding:"30px 10px"}}>
                     <Link to="/admin_view_all_users">
-                    <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
-                    </Link>
+                   <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
+                   </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+               <Card.Title className="text-center" >
+                 </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -82,6 +95,7 @@ export default function UserDataAdmin(props){
                         <p style={{padding:"0px 550px 100px 10px"}}> {me.username},{me.age}
                         <br></br>
                         {me.profession}
+                        <Card.Body  style={{width: "400px"}}>
                         <hr style={{height:"30px",color:"red"}}/>  
                      <ul>
                      <li key="{me.dob}"><p  > Date of Birth : {moment(me.dob).format('DD MMM, YYYY') }</p></li>
@@ -89,7 +103,10 @@ export default function UserDataAdmin(props){
                      <li key="{me.nationality}"><p  > Nationality : {me.nationality}</p></li>
                      <li key="{me.languagesknown}"><p  > Languages known : {me.languagesknown}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                     )
@@ -100,10 +117,14 @@ export default function UserDataAdmin(props){
                   else{
                   
                   return(
-                    <div className="Button" style={{paddingLeft:"30px", paddingTop:"10px"}}>
+                  <div style={{ padding:"30px 10px"}}>
                     <Link to="/admin_view_all_users">
-                    <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
-                    </Link>
+                   <Button style={{ borderRadius: "12px", fontSize:"30px", fontWeight:"bold", paddingLeft:"10px"}} > Back </Button>
+                   </Link>
+                    <div className="Button" style={{paddingLeft:"300px", paddingTop:"10px"}}>
+                    <Card style={{paddingLeft:"50px", width: "900px"}}>
+               <Card.Title className="text-center" >
+                 </Card.Title>
                     <div className='dp' key={me.userid} style= {{paddingLeft:"400px"}}>
                     
                     <img src={url+me.dp} alt="dp" style={{height:"200px", width:"200px" , paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px",paddingBottom:"20px", border:"5px", borderRadius:"50%"}}/>
@@ -111,6 +132,7 @@ export default function UserDataAdmin(props){
                         <p style={{padding:"0px 550px 100px 10px"}}> {me.username},{me.age}
                         <br></br>
                         {me.profession}
+                        <Card.Body  style={{width: "400px"}}>
                         <hr style={{height:"30px",color:"red"}}/>  
                      <ul>
                      <li key="{me.dob}"><p  > Date of Birth : {moment(me.dob).format('DD MMM, YYYY') }</p></li>
@@ -118,7 +140,10 @@ export default function UserDataAdmin(props){
                      <li key="{me.nationality}"><p  > Nationality : {me.nationality}</p></li>
                      <li key="{me.languagesknown}"><p  > Languages known : {me.languagesknown}</p></li>
                      </ul>
+                     </Card.Body>
                      </p>
+                     </div>
+                     </Card>
                      </div>
                      </div>
                     )
